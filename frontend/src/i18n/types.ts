@@ -66,9 +66,10 @@ export type TranslationTree = {
     message: string;
     inquiryType: string;
     inquiryGeneral: string;
-    inquirySupport: string;
-    inquiryBusiness: string;
-    inquiryPress: string;
+    inquirySender: string;
+    inquiryTraveler: string;
+    inquiryReceiver: string;
+    inquiryPartnership: string;
     placeholderName: string;
     placeholderEmail: string;
     placeholderSubject: string;
@@ -187,6 +188,7 @@ export type TranslationTree = {
   customers: {
     title: string;
     lead: string;
+    stepsLabel: string;
     journeyTitle: string;
     steps: StepItem[];
     benefitsTitle: string;
@@ -197,6 +199,7 @@ export type TranslationTree = {
   travelers: {
     title: string;
     lead: string;
+    stepsLabel: string;
     journeyTitle: string;
     steps: StepItem[];
     benefitsTitle: string;
@@ -218,6 +221,7 @@ export type TranslationTree = {
   features: {
     title: string;
     lead: string;
+    eyebrow: string;
     groups: { title: string; items: FeatureItem[] }[];
   };
   safety: {
@@ -228,6 +232,8 @@ export type TranslationTree = {
   faq: {
     title: string;
     lead: string;
+    topicsLabel: string;
+    searchPlaceholder: string;
     categories: FaqCategory[];
   };
   contact: {

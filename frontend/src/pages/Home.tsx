@@ -1,7 +1,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { DownloadCta } from '../components/ui/DownloadCta';
 import { Reveal } from '../components/ui/Reveal';
-import { StoreBadges } from '../components/ui/StoreBadges';
 import { useLanguage } from '../context/LanguageContext';
 import '../styles/home.css';
 
@@ -101,8 +101,6 @@ export function Home() {
   const featuresAccent = lang === 'fr' ? 'confiance' : 'trust';
   const whyAccent = lang === 'fr' ? 'pair à pair' : 'peer-to-peer';
   const faqAccent = lang === 'fr' ? 'fréquentes' : 'questions';
-  const downloadAccent = lang === 'fr' ? 'app' : 'app';
-
   const whatRing = lang === 'fr' ? 'vrais trajets' : 'real journeys';
   const flowRing = lang === 'fr' ? 'flux connecté' : 'connected flow';
   const safetyRing = lang === 'fr' ? 'place de marché' : 'marketplace';
@@ -259,7 +257,7 @@ export function Home() {
                   </span>
                   Escrow
                 </span>
-                <p className="home-hero__escrow-label">Customer payment</p>
+                <p className="home-hero__escrow-label">Sender payment</p>
                 <p className="home-hero__escrow-title">Held until delivery</p>
                 <div className="home-hero__escrow-steps">
                   <span>Paid</span>
@@ -677,28 +675,7 @@ export function Home() {
         </div>
       </section>
 
-      <section id="download" className="home-panel home-panel--brand home-download" aria-labelledby="app-title">
-        <div className="home-download__bg" aria-hidden="true" />
-        <Reveal className="home-download__inner">
-          <p className="home-download__badge">
-            <span className="home-download__badge-icon" aria-hidden="true">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
-                <rect x="6" y="2.5" width="12" height="19" rx="2.5" />
-              </svg>
-            </span>
-            {t.common.appLabel}
-          </p>
-          <h2 id="app-title" className="home-section-title" style={{ marginTop: '1.5rem' }}>
-            {accentSplit(t.common.downloadTitle, downloadAccent, 'serif')}
-          </h2>
-          <p className="home-section-lead" style={{ marginTop: '1.25rem' }}>
-            {t.common.downloadLead}
-          </p>
-          <div className="home-download__badges">
-            <StoreBadges variant="cta" />
-          </div>
-        </Reveal>
-      </section>
+      <DownloadCta />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import { BrandLogoIcon } from '../ui/BrandLogoIcon';
 import { StoreBadges } from '../ui/StoreBadges';
 
 function LangSwitch() {
@@ -27,11 +28,7 @@ export function Footer() {
           <div className="footer-brand">
             <Link className="site-logo" to="/" aria-label={`${t.common.brand} home`}>
               <span className="site-logo__icon">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
-                  <path d="M3 17c4-9 14-9 18 0" />
-                  <circle cx="3" cy="17" r="1.5" fill="currentColor" />
-                  <circle cx="21" cy="17" r="1.5" fill="currentColor" />
-                </svg>
+                <BrandLogoIcon size={28} />
               </span>
               <span className="site-logo__text">{t.common.brand}</span>
             </Link>

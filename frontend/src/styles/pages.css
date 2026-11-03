@@ -165,14 +165,7 @@
   align-items: start;
 }
 
-.contact-aside {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--line);
-}
-
-.contact-aside h3 {
-  font-size: 1.1rem;
-}
+/* Legacy contact-aside helpers removed — Contact page uses styles/contact.css */
 
 .qr-placeholder {
   margin-top: 1rem;

@@ -5,7 +5,7 @@ export const fr: TranslationTree = {
     home: 'Accueil',
     about: 'À propos',
     howItWorks: 'Comment ça marche',
-    forCustomers: 'Pour les clients',
+    forCustomers: 'Pour les expéditeurs',
     forTravelers: 'Pour les voyageurs',
     forReceivers: 'Pour les destinataires',
     features: 'Fonctionnalités',
@@ -40,9 +40,10 @@ export const fr: TranslationTree = {
     message: 'Message',
     inquiryType: 'Type de demande',
     inquiryGeneral: 'Question générale',
-    inquirySupport: 'Assistance',
-    inquiryBusiness: 'Entreprise / partenariat',
-    inquiryPress: 'Presse',
+    inquirySender: 'Assistance expéditeur',
+    inquiryTraveler: 'Assistance voyageur',
+    inquiryReceiver: 'Assistance destinataire',
+    inquiryPartnership: 'Partenariats',
     placeholderName: 'Votre nom',
     placeholderEmail: 'vous@exemple.com',
     placeholderSubject: 'Comment pouvons-nous vous aider ?',
@@ -54,7 +55,7 @@ export const fr: TranslationTree = {
   footer: {
     tagline: 'Livraison internationale de colis entre particuliers, via des voyageurs vérifiés.',
     quickLinks: 'Liens rapides',
-    customerLinks: 'Pour les clients',
+    customerLinks: 'Pour les expéditeurs',
     travelerLinks: 'Pour les voyageurs',
     receiverLinks: 'Pour les destinataires',
     contactInfo: 'Contact',
@@ -81,7 +82,7 @@ export const fr: TranslationTree = {
     heroBadgeAccent: 'International',
     heroHeadline: 'Envoyez des colis à l’international avec des voyageurs de confiance',
     heroLead:
-      'Une place de marché pair à pair qui connecte clients, voyageurs vérifiés et destinataires, avec séquestre, vérification d’identité et remise NFC dans l’application mobile.',
+      'Une place de marché pair à pair qui connecte expéditeurs, voyageurs vérifiés et destinataires, avec séquestre, vérification d’identité et remise NFC dans l’application mobile.',
     heroCtaDownload: 'Télécharger l’app',
     heroCtaHow: 'Comment ça marche',
     whatIsEyebrow: 'Qu’est-ce que WWNGO',
@@ -112,7 +113,7 @@ export const fr: TranslationTree = {
     rolesEyebrow: 'Pour qui',
     rolesTitle: 'Conçu pour chaque acteur du trajet',
     rolesLead: 'Choisissez votre rôle pour voir le parcours complet dans l’app.',
-    roleCustomerTitle: 'Clients et expéditeurs',
+    roleCustomerTitle: 'Pour les expéditeurs',
     roleCustomerLead: 'Expédiez à moindre coût avec des voyageurs sur votre route. Le séquestre protège votre paiement jusqu’à la livraison.',
     roleTravelerTitle: 'Voyageurs',
     roleTravelerLead: 'Monétisez l’espace bagage disponible sur vos trajets, avec vérification KYC et règles claires.',
@@ -128,7 +129,7 @@ export const fr: TranslationTree = {
       },
       {
         title: 'Séquestre et paiements Stripe',
-        body: 'Les fonds du client sont sécurisés jusqu’à ce que les conditions de livraison soient remplies.',
+        body: 'Les fonds de l’expéditeur sont sécurisés jusqu’à ce que les conditions de livraison soient remplies.',
       },
       {
         title: 'Remise NFC',
@@ -177,7 +178,7 @@ export const fr: TranslationTree = {
       },
       {
         q: 'Comment mon paiement est-il protégé ?',
-        a: 'Les paiements clients passent par Stripe et sont conservés en séquestre jusqu’à confirmation de livraison selon les règles du marché.',
+        a: 'Les paiements des expéditeurs passent par Stripe et sont conservés en séquestre jusqu’à confirmation de livraison selon les règles du marché.',
       },
       {
         q: 'Qui peut devenir voyageur ?',
@@ -264,8 +265,9 @@ export const fr: TranslationTree = {
       'WWNGO utilise Stripe pour le traitement des paiements. Portefeuille et versements voyageur sont gérés in-app selon la disponibilité régionale.',
   },
   customers: {
-    title: 'Pour les clients et expéditeurs',
+    title: 'Pour les expéditeurs',
     lead: 'Publiez une demande, alimentez le séquestre et suivez l’envoi jusqu’à confirmation par le destinataire.',
+    stepsLabel: 'Étapes',
     journeyTitle: 'Votre parcours en tant qu’expéditeur',
     steps: [
       {
@@ -277,7 +279,7 @@ export const fr: TranslationTree = {
         body: 'Finalisez le KYC via Sumsub lorsque requis pour que voyageurs et destinataires puissent faire confiance à votre profil.',
       },
       {
-        title: 'Construire votre profil client',
+        title: 'Construire votre profil expéditeur',
         body: 'Ajoutez les informations de profil qui facilitent l’appariement et une meilleure coordination.',
       },
       {
@@ -343,6 +345,7 @@ export const fr: TranslationTree = {
   travelers: {
     title: 'Pour les voyageurs',
     lead: 'Gagnez en transportant des colis sur vos trajets prévus, avec vérification, séquestre et consignes claires.',
+    stepsLabel: 'Étapes',
     journeyTitle: 'Votre parcours en tant que voyageur',
     steps: [
       {
@@ -474,6 +477,7 @@ export const fr: TranslationTree = {
   features: {
     title: 'Fonctionnalités de la plateforme',
     lead: 'Tout ce qui alimente confiance, appariement et livraison dans l’app mobile WWNGO.',
+    eyebrow: 'Fonctionnalités',
     groups: [
       {
         title: 'Confiance et conformité',
@@ -579,6 +583,8 @@ export const fr: TranslationTree = {
   faq: {
     title: 'Foire aux questions',
     lead: 'Réponses sur WWNGO, l’app, les paiements et chaque rôle sur la place de marché.',
+    topicsLabel: 'Sujets',
+    searchPlaceholder: 'Rechercher des questions',
     categories: [
       {
         id: 'general',
@@ -600,7 +606,7 @@ export const fr: TranslationTree = {
       },
       {
         id: 'customers',
-        title: 'Clients et expéditeurs',
+        title: 'Expéditeurs',
         items: [
           {
             q: 'Comment créer une demande de colis ?',

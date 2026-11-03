@@ -6,16 +6,27 @@ import { Header } from './Header';
 export function Layout() {
   const { pathname } = useLocation();
   const isHome = pathname === '/';
-  const isPanelPage = pathname === '/about';
+  const isPanelPage =
+    pathname === '/about' ||
+    pathname === '/faq' ||
+    pathname === '/features' ||
+    pathname === '/contact' ||
+    pathname === '/how-it-works' ||
+    pathname === '/safety' ||
+    pathname === '/customers' ||
+    pathname === '/travelers' ||
+    pathname === '/receivers';
+  /** Same overlay shell as Home: transparent nav on dark hero, no light gap above. */
+  const isOverlayShell = isHome || isPanelPage;
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return (
-    <div className={`site-shell${isHome ? ' site-shell--home' : ''}${isPanelPage ? ' site-shell--panels' : ''}`}>
+    <div className={`site-shell${isOverlayShell ? ' site-shell--home' : ''}${isPanelPage ? ' site-shell--panels' : ''}`}>
       <Header />
-      <main className={isHome ? 'home-main' : isPanelPage ? 'page page--panels' : 'page'}>
+      <main className={isOverlayShell ? 'home-main' : 'page'}>
         <Outlet />
       </main>
       <Footer />

@@ -5,7 +5,7 @@ export const en: TranslationTree = {
     home: 'Home',
     about: 'About',
     howItWorks: 'How it works',
-    forCustomers: 'For customers',
+    forCustomers: 'For senders',
     forTravelers: 'For travelers',
     forReceivers: 'For receivers',
     features: 'Features',
@@ -40,9 +40,10 @@ export const en: TranslationTree = {
     message: 'Message',
     inquiryType: 'Inquiry type',
     inquiryGeneral: 'General question',
-    inquirySupport: 'Support',
-    inquiryBusiness: 'Business / partnership',
-    inquiryPress: 'Press',
+    inquirySender: 'Sender support',
+    inquiryTraveler: 'Traveler support',
+    inquiryReceiver: 'Receiver support',
+    inquiryPartnership: 'Partnerships',
     placeholderName: 'Your name',
     placeholderEmail: 'you@example.com',
     placeholderSubject: 'How can we help?',
@@ -54,7 +55,7 @@ export const en: TranslationTree = {
   footer: {
     tagline: 'Peer-to-peer international parcel delivery, powered by verified travelers.',
     quickLinks: 'Quick links',
-    customerLinks: 'For customers',
+    customerLinks: 'For senders',
     travelerLinks: 'For travelers',
     receiverLinks: 'For receivers',
     contactInfo: 'Contact',
@@ -81,7 +82,7 @@ export const en: TranslationTree = {
     heroBadgeAccent: 'International',
     heroHeadline: 'Send parcels across borders with travelers you can trust',
     heroLead:
-      'A peer-to-peer marketplace connecting customers, verified travelers, and receivers, with escrow, identity checks, and NFC handoff in the mobile app.',
+      'A peer-to-peer marketplace connecting senders, verified travelers, and receivers, with escrow, identity checks, and NFC handoff in the mobile app.',
     heroCtaDownload: 'Download the app',
     heroCtaHow: 'How it works',
     whatIsEyebrow: 'What is WWNGO',
@@ -112,7 +113,7 @@ export const en: TranslationTree = {
     rolesEyebrow: 'Who it is for',
     rolesTitle: 'Built for every side of the journey',
     rolesLead: 'Choose your role to see the full journey in the app.',
-    roleCustomerTitle: 'Customers & senders',
+    roleCustomerTitle: 'For senders',
     roleCustomerLead: 'Ship affordably with travelers on your route. Escrow protects your payment until delivery.',
     roleTravelerTitle: 'Travelers',
     roleTravelerLead: 'Monetize spare luggage space on trips you already take, with KYC verification and clear rules.',
@@ -128,7 +129,7 @@ export const en: TranslationTree = {
       },
       {
         title: 'Escrow & Stripe payments',
-        body: 'Customer funds are held securely until delivery conditions are met.',
+        body: 'Sender funds are held securely until delivery conditions are met.',
       },
       {
         title: 'NFC handoff',
@@ -177,7 +178,7 @@ export const en: TranslationTree = {
       },
       {
         q: 'How is my payment protected?',
-        a: 'Customer payments are processed through Stripe and held in escrow until delivery is confirmed according to marketplace rules.',
+        a: 'Sender payments are processed through Stripe and held in escrow until delivery is confirmed according to marketplace rules.',
       },
       {
         q: 'Who can become a traveler?',
@@ -264,8 +265,9 @@ export const en: TranslationTree = {
       'WWNGO uses Stripe for payment processing. Wallet and payout details for travelers are managed in the app according to regional availability.',
   },
   customers: {
-    title: 'For customers & senders',
+    title: 'For senders',
     lead: 'Post a parcel request, fund escrow, and track your shipment until the receiver confirms delivery.',
+    stepsLabel: 'Steps',
     journeyTitle: 'Your journey as a sender',
     steps: [
       {
@@ -277,7 +279,7 @@ export const en: TranslationTree = {
         body: 'Finish KYC through Sumsub when required so travelers and receivers can trust your profile.',
       },
       {
-        title: 'Build your customer profile',
+        title: 'Build your sender profile',
         body: 'Add profile details that help matching and support smoother coordination.',
       },
       {
@@ -343,6 +345,7 @@ export const en: TranslationTree = {
   travelers: {
     title: 'For travelers',
     lead: 'Earn by carrying parcels on trips you already plan, with verification, escrow, and clear guidelines.',
+    stepsLabel: 'Steps',
     journeyTitle: 'Your journey as a traveler',
     steps: [
       {
@@ -474,6 +477,7 @@ export const en: TranslationTree = {
   features: {
     title: 'Platform features',
     lead: 'Everything that powers trust, matching, and delivery in the WWNGO mobile app.',
+    eyebrow: 'Features',
     groups: [
       {
         title: 'Trust & compliance',
@@ -579,6 +583,8 @@ export const en: TranslationTree = {
   faq: {
     title: 'Frequently asked questions',
     lead: 'Answers about WWNGO, the app, payments, and each role in the marketplace.',
+    topicsLabel: 'Topics',
+    searchPlaceholder: 'Search questions',
     categories: [
       {
         id: 'general',
@@ -600,7 +606,7 @@ export const en: TranslationTree = {
       },
       {
         id: 'customers',
-        title: 'Customers & senders',
+        title: 'Senders',
         items: [
           {
             q: 'How do I create a parcel request?',

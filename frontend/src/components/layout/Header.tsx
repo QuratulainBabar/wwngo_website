@@ -1,17 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useLanguage } from '../../context/LanguageContext';
+import { BrandLogoIcon } from '../ui/BrandLogoIcon';
 import '../../styles/layout.css';
-
-function LogoIcon() {
-  return (
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" aria-hidden="true">
-      <path d="M3 17c4-9 14-9 18 0" />
-      <circle cx="3" cy="17" r="1.5" fill="currentColor" />
-      <circle cx="21" cy="17" r="1.5" fill="currentColor" />
-    </svg>
-  );
-}
 
 function LangSwitch({ variant = 'default' }: { variant?: 'default' | 'home' | 'footer' }) {
   const { lang, setLang, t } = useLanguage();
@@ -29,8 +20,10 @@ function LangSwitch({ variant = 'default' }: { variant?: 'default' | 'home' | 'f
 
 function SolutionsDropdown({ mobile }: { mobile?: boolean }) {
   const { t } = useLanguage();
+  const { pathname } = useLocation();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const isActive = ['/customers', '/travelers', '/receivers'].some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (mobile) return;
@@ -42,11 +35,12 @@ function SolutionsDropdown({ mobile }: { mobile?: boolean }) {
   }, [mobile]);
 
   return (
-    <div className={`nav-dropdown ${open ? 'open' : ''}`} ref={ref}>
+    <div className={`nav-dropdown ${open ? 'open' : ''}${isActive ? ' is-active' : ''}`} ref={ref}>
       <button
         type="button"
-        className="nav-dropdown__trigger"
+        className={`nav-dropdown__trigger${isActive ? ' active' : ''}`}
         aria-expanded={open}
+        aria-current={isActive ? 'page' : undefined}
         onClick={() => setOpen((v) => !v)}
       >
         {t.nav.solutions}
@@ -73,22 +67,33 @@ export function Header() {
   const { t } = useLanguage();
   const { pathname } = useLocation();
   const isHome = pathname === '/';
+  const isOverlayNav =
+    isHome ||
+    pathname === '/about' ||
+    pathname === '/faq' ||
+    pathname === '/features' ||
+    pathname === '/contact' ||
+    pathname === '/how-it-works' ||
+    pathname === '/safety' ||
+    pathname === '/customers' ||
+    pathname === '/travelers' ||
+    pathname === '/receivers';
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const navClass = ({ isActive }: { isActive: boolean }) => (isActive ? 'active' : '');
+  const navClass = ({ isActive }: { isActive: boolean }) => (isActive ? 'active' : undefined);
 
   return (
-    <header className={`site-header${isHome ? ' site-header--home' : ''}`}>
+    <header className={`site-header${isOverlayNav ? ' site-header--home' : ''}`}>
       <div className="container site-header__inner">
         <Link className="site-logo" to="/" aria-label={`${t.common.brand} home`}>
           <span className="site-logo__icon">
-            <LogoIcon />
+            <BrandLogoIcon size={28} />
           </span>
           <span className="site-logo__text">{t.common.brand}</span>
         </Link>
 
         <nav className="site-nav" aria-label="Main">
-          <NavLink to="/" className={navClass}>
+          <NavLink to="/" end className={navClass}>
             {t.nav.home}
           </NavLink>
           <NavLink to="/about" className={navClass}>
@@ -113,7 +118,7 @@ export function Header() {
         </nav>
 
         <div className="header-actions">
-          <LangSwitch variant={isHome ? 'home' : 'default'} />
+          <LangSwitch variant={isOverlayNav ? 'home' : 'default'} />
           <Link className="btn btn--primary header-download-btn" to="/download">
             {t.nav.downloadApp}
           </Link>
@@ -139,7 +144,7 @@ export function Header() {
 
       <div className={`mobile-nav-panel ${mobileOpen ? 'open' : ''}`}>
         <div className="mobile-nav">
-          <NavLink to="/" onClick={() => setMobileOpen(false)}>
+          <NavLink to="/" end onClick={() => setMobileOpen(false)}>
             {t.nav.home}
           </NavLink>
           <NavLink to="/about" onClick={() => setMobileOpen(false)}>
